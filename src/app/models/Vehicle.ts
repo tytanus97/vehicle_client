@@ -1,7 +1,6 @@
-import { Owner } from './Owner';
 
 export class Vehicle {
     constructor(public vehicleId: number,public modelName: string, public brandName: string, public price: number,
-        public productionYear: number,public owners: Array<Owner>) {
+        public productionYear: number) {
     }
 }
