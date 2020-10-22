@@ -5,15 +5,18 @@
         <th scope="col">#</th>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor = "let owner of ownerList">
-        <th scope="row">1</th>
-        <td>{{owner.firstName}}</td>
-        <td>{{owner.lastName}}</td>
+      <tr *ngFor = "let owner of ownerList;let i = index" (click) = "updateOwner(owner)">
+        <th scope="row">{{i+1}}</th>
+        <td scope="row">{{owner.firstName}}</td>
+        <td  scope="row">{{owner.lastName}}</td>
+        <td><button class="btn btn-danger" (click) = "deleteOwner(owner.ownerId)">Delete</button></td>
       </tr>
     </tbody>
   </table>
+  <button class="btn btn-primary" (click) = "addOwner()">Add</button>
   
   

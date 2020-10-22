@@ -1,0 +1,7 @@
+table>tbody>tr:hover {
+    cursor: pointer;
+    background-color: #1d0200 !important;
+}
+table {
+    color:white;
+}
