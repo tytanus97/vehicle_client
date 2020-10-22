@@ -11,5 +11,4 @@ import { EngineType } from './utils/EngineTypeEnum';
 })
 export class AppComponent {
   title = 'vehicleClient';
-  vehicle: Vehicle = new Car(1,"asdasd","asdasda",122,122,new Array<Owner>(),5,EngineType.DIESEL.toString(),0,200);
 }
