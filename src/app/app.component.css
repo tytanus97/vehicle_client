@@ -1,0 +1,23 @@
+h1 {
+    padding:10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content {
+    width:60%;
+}
+.navigation {
+    display:flex;
+    flex-direction: row;
+    justify-content: center
+}
+.navigation > button {
+    margin:10px;
+    min-width: 100px;
+}
