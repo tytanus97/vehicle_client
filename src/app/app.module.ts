@@ -5,12 +5,16 @@ import { VehicleService } from './services/vehicle.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { OwnerComponent } from './components/owner/owner.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const services = [OwnerService,VehicleService];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OwnerComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -20,4 +24,6 @@ export const services = [OwnerService,VehicleService];
   providers: [services,HttpClient],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }
