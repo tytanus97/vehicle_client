@@ -44,11 +44,11 @@ export class OwnerComponent implements OnInit {
     }
 
   public addOwner() {
-      this.router.navigate(['addOwner'],{queryParams: {action:'add'}})
+      this.router.navigate(['addOwner'],{queryParams: {action:'add'},relativeTo:this.route.parent})
   }
 
   public updateOwner(owner: Owner) {
     this.ownerService.setCurrentOwner(owner);
-    this.router.navigate(['addOwner'],{queryParams: {action:'update'}});
+    this.router.navigate(['addOwner'],{queryParams: {action:'update'},relativeTo:this.route.parent});
   }
 }
