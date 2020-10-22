@@ -7,29 +7,37 @@ import { OwnerComponent } from './components/owner/owner.component';
 import { RocketComponent } from './components/rocket/rocket.component';
 
 const routes: Routes = [
-{
-  path:'owners',children: [{
-      path:'all',component:OwnerComponent
-      },
+  {
+    path: 'owners', children: [{
+      path: 'all', component: OwnerComponent
+    },
+    {
+      path: 'ownerDetails', component: OwnerDetailsComponent
+    },
+    {
+      path: 'addOwner', component: AddOwnerComponent
+    }]
+  },
+  {
+    path: 'cars', children: [
       {
-      path:'ownerDetails',component:OwnerDetailsComponent
-      },
+        path: 'all', component: CarComponent
+      }
+    ]
+  },
+  {
+    path: 'rockets',children: [
       {
-      path:'addOwner',component:AddOwnerComponent
-      }]
-},
-{
-  path:'cars',component:CarComponent
-},
-{
-  path:'rockets',component:RocketComponent
-},{
-  path:'',redirectTo:'owners/all',pathMatch:'full'
-},
-{
-  path:"**",redirectTo:'owners/all'
-}];
- 
+        path:'all',component:RocketComponent
+      }
+    ]
+  }, {
+    path: '', redirectTo: 'owners/all', pathMatch: 'full'
+  },
+  {
+    path: "**", redirectTo: 'owners/all'
+  }];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
