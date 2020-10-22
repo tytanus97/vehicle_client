@@ -2,15 +2,21 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CarComponent } from './components/car/car.component';
 import { AddOwnerComponent } from './components/owner/add-owner/add-owner.component';
+import { OwnerDetailsComponent } from './components/owner/owner-details/owner-details.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { RocketComponent } from './components/rocket/rocket.component';
 
 const routes: Routes = [
 {
-  path:'owners',component:OwnerComponent
-},
-{
-  path:'addOwner',component:AddOwnerComponent
+  path:'owners',children: [{
+      path:'all',component:OwnerComponent
+      },
+      {
+      path:'ownerDetails',component:OwnerDetailsComponent
+      },
+      {
+      path:'addOwner',component:AddOwnerComponent
+      }]
 },
 {
   path:'cars',component:CarComponent
@@ -18,10 +24,10 @@ const routes: Routes = [
 {
   path:'rockets',component:RocketComponent
 },{
-  path:'',redirectTo:'owners',pathMatch:'full'
+  path:'',redirectTo:'owners/all',pathMatch:'full'
 },
 {
-  path:"**",redirectTo:'owners'
+  path:"**",redirectTo:'owners/all'
 }];
  
 @NgModule({

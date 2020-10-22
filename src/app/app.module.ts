@@ -11,6 +11,7 @@ import { RocketComponent } from './components/rocket/rocket.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddOwnerComponent } from './components/owner/add-owner/add-owner.component';
+import { OwnerDetailsComponent } from './components/owner/owner-details/owner-details.component';
 
 export const services = [OwnerService,VehicleService];
 
@@ -20,7 +21,8 @@ export const services = [OwnerService,VehicleService];
     OwnerComponent,
     CarComponent,
     RocketComponent,
-    AddOwnerComponent
+    AddOwnerComponent,
+    OwnerDetailsComponent
   ],
   imports: [
     BrowserModule,
